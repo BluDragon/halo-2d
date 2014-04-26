@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="FlamePartS" type="RESOURCE"/>
+  <resource name="NapalmGooS" type="RESOURCE"/>
+  <resource name="PlasmaPistolSmokeS" type="RESOURCE"/>
+  <resource name="PlasmaPistolRingS" type="RESOURCE"/>
+  <resource name="PlasmaPistolLineS" type="RESOURCE"/>
+  <resource name="PlasmaPistolGlowS" type="RESOURCE"/>
+  <resource name="PlasmaPistolChargedBoltS" type="RESOURCE"/>
+  <resource name="PlasmaPistolChargedSparksS" type="RESOURCE"/>
+  <resource name="PlasmaPistolPOISparksS" type="RESOURCE"/>
+  <resource name="PlasmaRifleSparksS" type="RESOURCE"/>
+  <resource name="PlasmaRifleFlashS" type="RESOURCE"/>
+  <resource name="PlasmaRifleSmokeS" type="RESOURCE"/>
+  <resource name="FRCCoronaS" type="RESOURCE"/>
+  <resource name="FRCFlareS" type="RESOURCE"/>
+  <resource name="FRCSmokeS" type="RESOURCE"/>
+  <resource name="FRCSparksS" type="RESOURCE"/>
+  <resource name="FRCMuzzleFlashS" type="RESOURCE"/>
+  <resource name="SpartanLaserFlareS" type="RESOURCE"/>
+  <resource name="SpartanLaserLineS" type="RESOURCE"/>
+</resources>

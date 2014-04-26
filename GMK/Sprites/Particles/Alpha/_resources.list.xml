@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="PlasmaGArcsS" type="RESOURCE"/>
+  <resource name="PlasmaGLineS" type="RESOURCE"/>
+  <resource name="PlasmaGRingS" type="RESOURCE"/>
+  <resource name="PlasmaGCoronaS" type="RESOURCE"/>
+  <resource name="PlasmaGArmingSparksS" type="RESOURCE"/>
+  <resource name="FRCCoreS" type="RESOURCE"/>
+</resources>
