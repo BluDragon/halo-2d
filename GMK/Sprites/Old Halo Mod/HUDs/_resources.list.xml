@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="Kill Icons" type="GROUP"/>
+  <resource name="PortraitAnimations" type="GROUP"/>
+  <resource name="Gamemode HUDs" type="GROUP"/>
+  <resource name="Class and Team Select" type="GROUP"/>
+  <resource name="Menus" type="GROUP"/>
+  <resource name="ScoreBoard" type="GROUP"/>
+  <resource name="WeaponHUDS" type="GROUP"/>
+  <resource name="Timer" type="GROUP"/>
+  <resource name="Lobby" type="GROUP"/>
+  <resource name="GameNoticeS" type="RESOURCE"/>
+  <resource name="CharacterHUD" type="RESOURCE"/>
+  <resource name="NemesisS" type="RESOURCE"/>
+  <resource name="MedalS" type="RESOURCE"/>
+  <resource name="KOTHHudS" type="RESOURCE"/>
+  <resource name="UberBarS" type="RESOURCE"/>
+  <resource name="Equipment Icons" type="GROUP"/>
+  <resource name="HaloTeamBarsShineS" type="RESOURCE"/>
+  <resource name="HaloArrowIconsS" type="RESOURCE"/>
+  <resource name="HaloKothIconsS" type="RESOURCE"/>
+  <resource name="HaloGenIconsS" type="RESOURCE"/>
+</resources>
