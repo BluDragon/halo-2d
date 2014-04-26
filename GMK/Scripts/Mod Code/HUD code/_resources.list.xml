@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="Game Modes" type="GROUP"/>
+  <resource name="Visor" type="GROUP"/>
+  <resource name="drawTeamBar" type="RESOURCE"/>
+  <resource name="drawCapBar" type="RESOURCE"/>
+  <resource name="drawKillLog" type="RESOURCE"/>
+  <resource name="drawHealthHud" type="RESOURCE"/>
+  <resource name="drawFlagPointer" type="RESOURCE"/>
+  <resource name="drawUberHud" type="RESOURCE"/>
+  <resource name="drawHealingHud" type="RESOURCE"/>
+  <resource name="drawNutsNBoltsHud" type="RESOURCE"/>
+  <resource name="drawSentryHud" type="RESOURCE"/>
+  <resource name="drawStickyHud" type="RESOURCE"/>
+  <resource name="drawFirebombHud" type="RESOURCE"/>
+  <resource name="noticeBarRedirect" type="RESOURCE"/>
+  <resource name="balancerRedirect" type="RESOURCE"/>
+  <resource name="drawHealedHud" type="RESOURCE"/>
+  <resource name="drawSandwichHud" type="RESOURCE"/>
+  <resource name="drawCursor" type="RESOURCE"/>
+</resources>
