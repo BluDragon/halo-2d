@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="ALARM" id="5">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if ammoCount &lt; maxAmmo {
+    ammoCount+=1;
+    // play the reload sound if the player owns it AND if they're not currently shooting
+    if (ownerPlayer == global.myself) {
+        if (((global.myself.object.keyState | global.myself.object.pressedKeys) &amp; $10) == 0) {
+            FMODSoundPlay(global.ShotgunReloadSnd);
+        }
+    }
+}
+if ammoCount &lt; maxAmmo {
+    alarm[5] = reloadTime;
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

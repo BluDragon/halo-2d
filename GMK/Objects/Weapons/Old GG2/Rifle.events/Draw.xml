@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="DRAW" id="0">
+  <actions>
+    <action id="604" library="1">
+      <!--action name: Inherited-->
+      <kind>NORMAL</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>false</canApplyTo>
+      <actionType>FUNCTION</actionType>
+      <functionName>action_inherited</functionName>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments/>
+    </action>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">{
+    if(shot) {
+        var origdepth;
+        shot=false;
+        draw_set_alpha(0.8);
+        origdepth = depth;
+        depth = origdepth + 1;
+        if(owner.team==TEAM_RED) {
+            draw_line_width_color(x,y,x2,y2,2,c_red,c_red);
+            
+            var theta, em, num;
+            // smoke trail effect
+            theta = point_direction(x, y, x2, y2);
+            part_type_orientation(pt, theta, theta, 0, 0, 0);
+            em = part_emitter_create(ps);
+            part_emitter_region(ps, em, x, x2, y, y2, ps_shape_line, ps_distr_linear);
+            num = point_distance(x, y, x2, y2) / 4;
+            part_emitter_burst(ps, em, pt, num);
+            part_emitter_destroy(ps, em);
+        } else {
+            //draw_line_width_color(x,y,x2,y2,2,c_blue,c_blue);
+            beam_life = 30;
+            beam_x = x;
+            beam_y = y;
+            beam_x2 = x2;
+            beam_y2 = y2;
+        }
+        depth = origdepth;
+    }
+    //draw_text(x, y - 35, hitDamage);
+    if (beam_life &gt; -1) {
+        var alpha;
+        alpha = 0.52 * max(min(1, (beam_life - 20) / 5), 0)
+        draw_set_alpha(alpha);
+        draw_line_width_color(beam_x, beam_y, beam_x2, beam_y2, 3, make_color_rgb(100,100,255), make_color_rgb(100,100,255));
+        draw_line_width_color(beam_x, beam_y, beam_x2, beam_y2, 2, c_white, c_white);
+        draw_line_width_color(beam_x, beam_y + 1, beam_x2, beam_y2 + 1, 1, make_color_rgb(0, 0, 255), make_color_rgb(0,0,255));
+        if (!hitPlayer) draw_sprite_ext(BeamRiflePOIS, 0, beam_x2, beam_y2, 1, 1, 0, c_white, min(1, beam_life / 10));
+    }
+    draw_set_alpha(0.8);
+    
+    if (owner.zoomed &amp;&amp; owner == global.myself.object) {
+        if (hitDamage &lt; maxDamage) {
+            draw_set_alpha(0.25);
+            draw_sprite_ext(ChargeS, 0, mouse_x + 15*-image_xscale, mouse_y - 10, -image_xscale, 1, 0, c_white, image_alpha);
+            draw_set_alpha(0.8);
+        } else {
+            draw_sprite_ext(FullChargeS, 0, mouse_x + 65*-image_xscale, mouse_y, 1, 1, 0, c_white, image_alpha);
+        }
+        draw_sprite_part_ext(ChargeS, 1, 0, 0, ceil((hitDamage-baseDamage)*40/(maxDamage-baseDamage)), 20, mouse_x + 15*-image_xscale, mouse_y - 10, -image_xscale, 1, c_white, image_alpha);
+    }
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>
