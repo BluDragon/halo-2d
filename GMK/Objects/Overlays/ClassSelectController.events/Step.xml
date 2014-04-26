@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="STEP" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">if(not done) {
+    if(alpha&lt;0.99) alpha = power(alpha,0.7);
+    else alpha = 0.99;
+    if y&lt;120 y+=15;
+    if y&gt;120 y=120;
+}
+else {
+    if(alpha&gt;0.01) alpha = power(alpha,1/0.7);
+    y-=15;
+    if y &lt; -120 instance_destroy();
+}
+
+xoffset = view_xview[0];
+yoffset = view_yview[0];
+
+if mouse_x&gt;xoffset+8 &amp;&amp; mouse_x &lt;xoffset+57 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=0;
+    drawx=8;
+    text[0]="Close Quarters Battle variant";
+    text[1]="Weapon: Shotgun";
+    text[2]="Designed to improve encounters";
+    text[3]="in close quarters combat by";
+    text[4]="enhancing joint mobility.";
+}
+
+else if mouse_x&gt;xoffset+57 &amp;&amp; mouse_x &lt;xoffset+106 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=1;
+    drawx=57;
+    text[0]="Hayabusa variant";
+    text[1]="Weapon: Flame Thrower";
+    text[2]="Built to replace the Mark IV";
+    text[3]="variant with it's environmental";
+    text[4]="shielding and reduced weight.";
+}
+
+else if mouse_x&gt;xoffset+106 &amp;&amp; mouse_x &lt;xoffset+155 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=2;
+    drawx=106;
+    text[0]="Orbital Drop Shock Trooper";
+    text[1]="Weapon: Rocket Launcher";
+    text[2]="Features powerful thermal";
+    text[3]="shielding from the tempuratres";
+    text[4]="of atmospheric entry.";
+}
+
+else if mouse_x&gt;xoffset+155 &amp;&amp; mouse_x &lt;xoffset+204 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=3;
+    drawx=155;
+    text[0]="Assault/Security variant";
+    text[1]="Weapon: 50 Cal. Turret";
+    text[2]="The Security variant boasts";
+    text[3]="resiliant armor plating and";
+    text[4]="low shield recharge time.";
+    if (global.myself != -1) {
+        if (global.myself.team == TEAM_BLUE) {
+            text[1] = "Weapon: Plasma Cannon";
+        }
+    }
+}
+
+else if mouse_x&gt;xoffset+204 &amp;&amp; mouse_x &lt;xoffset+253 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=4;
+    drawx=204;
+    text[0]="Explosive Ordinance Disposal";
+    text[1]="Weapon: Brute Shot";
+    text[2]="E.O.D.'s detect, evaluate, and";
+    text[3]="safely disarm or rearm explosive";
+    text[4]="hazards in the field.";
+}
+
+else if mouse_x&gt;xoffset+253 &amp;&amp; mouse_x &lt;xoffset+302 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=5;
+    drawx=253;
+    text[0]="Assault Armor/V Variant";
+    text[1]="Weapon: Needler/Regenerator";
+    text[2]="Created with support and";
+    text[3]="mobility in mind, the E.V.A.";
+    text[4]="variant is useful anywhere.";
+}
+
+else if mouse_x&gt;xoffset+302 &amp;&amp; mouse_x &lt;xoffset+351 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=6;
+    drawx=302;
+    text[0]="Assault Armor/Mark IV";
+    text[1]="Weapon: Mauler/Autoturret";
+    text[2]="Streamlined for practical use";
+    text[3]="in the field, a favorite of";
+    text[4]="the experienced Spartan-II.";
+    if (global.myself != -1) {
+        if (global.myself.team == TEAM_RED) {
+            text[1] = "Weapon: Battle Rifle/Autoturret";
+        }
+    }
+}
+
+else if mouse_x&gt;xoffset+351 &amp;&amp; mouse_x &lt;xoffset+400 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=7;
+    drawx=351;
+    text[0]="Assault Armor/R Variant";
+    text[1]="Weapon: Magnum/Energy Sword";
+    text[2]="The main goal of Recon armor";
+    text[3]="is to enhance stealth abilities";
+    text[4]="with little loss of endurance.";
+    if (global.myself != -1) {
+        if (global.myself.team == TEAM_RED) {
+            text[1] = "Weapon: Magnum/Gravity Hammer";
+        }
+    }
+}
+
+else if mouse_x&gt;xoffset+400 &amp;&amp; mouse_x &lt;xoffset+449 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=8;
+    drawx=400;
+    text[0]="Assault Armor/S Variant";
+    text[1]="Weapon: Sniper Rifle";
+    text[2]="Like the Recon varian, the Scout";
+    text[3]="armor relies on stealth and";
+    text[4]="remaining out of sight or range.";
+    if (global.myself != -1) {
+        if (global.myself.team == TEAM_BLUE) {
+            text[1] = "Weapon: Beam Rifle";
+        }
+    }
+}
+
+else if mouse_x&gt;xoffset+449 &amp;&amp; mouse_x &lt;xoffset+456 &amp;&amp; mouse_y&lt;yoffset+65{
+    newclass=9;
+    drawx=420;
+    text[0]="Random Select";
+    text[1]="";
+    text[2]="Can't decide? Let the computer";
+    text[3]="select a class for you to play.";
+    text[4]="";
+}
+
+else newclass=-1;
+
+if newclass != mousedclass &amp;&amp; newclass !=-1 &amp;&amp; y=120{
+    if instance_exists(CharacterPortraitAnimation){
+        with(CharacterPortraitAnimation){
+            instance_destroy()
+        }
+    }
+    if(newclass&gt;=0 and newclass&lt;=9) {
+        instance_create(xoffset+230, yoffset+128, portraitAnimations[newclass]);
+    }
+    
+        mousedclass=newclass; //set the 'moused class' (current moused class) to that of newclass
+}       
+
+if mouse_check_button(mb_left) &amp;&amp; newclass !=-1{
+    if newclass==0 class = CLASS_SCOUT;
+    else if newclass==1 class = CLASS_PYRO;
+    else if newclass==2 class = CLASS_SOLDIER;
+    else if newclass==3 class = CLASS_HEAVY;
+    else if newclass==4 class = CLASS_DEMOMAN;
+    else if newclass==5 class = CLASS_MEDIC;
+    else if newclass==6 class = CLASS_ENGINEER;
+    else if newclass==7 class = CLASS_SPY;
+    else if newclass==8 class = CLASS_SNIPER;
+    else class=random(9);
+    event_user(1);
+}
+
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>
